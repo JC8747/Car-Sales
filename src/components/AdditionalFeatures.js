@@ -1,5 +1,7 @@
-import React from 'react';
-import AdditionalFeature from './AdditionalFeature';
+import React from "react";
+import AdditionalFeature from "./AdditionalFeature";
+import { removeFeature, buyItem } from "../redux/actions/dataActions";
+import { connect } from "react-redux";
 
 const AdditionalFeatures = props => {
   return (
@@ -18,4 +20,9 @@ const AdditionalFeatures = props => {
   );
 };
 
-export default AdditionalFeatures;
+const ma = {
+  removeFeature,
+  buyItem
+};
+
+export default connect(null, ma)(AdditionalFeatures);
